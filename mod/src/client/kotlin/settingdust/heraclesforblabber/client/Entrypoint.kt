@@ -1,4 +1,4 @@
-package settingdust.template.client
+package settingdust.heraclesforblabber.client
 
 import com.terraformersmc.modmenu.api.ModMenuApi
 
