@@ -52,9 +52,7 @@ minecraft {
 repositories {
     exclusiveContent {
         forRepository { maven("https://api.modrinth.com/maven") { name = "Modrinth" } }
-        forRepositories(
-            fg.repository,
-        ) // Only add this if you're using ForgeGradle, otherwise remove this line
+        forRepository { fg.repository }
         filter { includeGroup("maven.modrinth") }
     }
     maven("https://maven.su5ed.dev/releases") { name = "Sinytra" }

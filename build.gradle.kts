@@ -24,6 +24,26 @@ subprojects {
         maven("https://maven.terraformersmc.com/releases") {
             content { includeGroup("com.terraformersmc") }
         }
+        maven("https://maven.resourcefulbees.com/repository/maven-public/") {
+            content { includeGroupAndSubgroups("com.teamresourceful") }
+        }
+        maven("https://maven.resourcefulbees.com/repository/terrarium/") {
+            content { includeGroupAndSubgroups("earth.terrarium") }
+        }
+        maven("https://maven.ladysnake.org/releases") {
+            name = "Ladysnake Mods"
+            content {
+                includeGroupByRegex("(org|io\\.github).ladysnake.*")
+                includeGroupByRegex("(dev|io\\.github)\\.onyxstudios.*")
+            }
+        }
+        maven("https://api.modrinth.com/maven") {
+            name = "Modrinth"
+            content { includeGroup("maven.modrinth") }
+        }
+        maven("https://oss.sonatype.org/content/repositories/snapshots") {
+            name = "Nexus Repository Manager"
+        }
     }
 }
 

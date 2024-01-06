@@ -105,6 +105,56 @@ dependencyResolutionManagement.versionCatalogs.create("catalog") {
         .version("$fabricApi+1.10.4+$minecraft")
     // https://modrinth.com/mod/connector-extras/versions
     library("connector-extras", "maven.modrinth", "connector-extras").version("1.9.0+$minecraft")
+
+    /**
+     * ***********
+     * Library
+     * ************
+     */
+    // https://modrinth.com/mod/blabber/versions
+    library("blabber", "org.ladysnake", "blabber").version("1.4.0-mc$minecraft")
+    // https://maven.ladysnake.org/#/releases/dev/onyxstudios/cardinal-components-api
+    val cardinalComponents = "5.2.2"
+    library(
+            "cardinal-components-base",
+            "dev.onyxstudios.cardinal-components-api",
+            "cardinal-components-base"
+        )
+        .version(cardinalComponents)
+    library(
+            "cardinal-components-entity",
+            "dev.onyxstudios.cardinal-components-api",
+            "cardinal-components-entity"
+        )
+        .version(cardinalComponents)
+
+    library("fabric-permissions-api", "me.lucko", "fabric-permissions-api").version("0.2-SNAPSHOT")
+
+    // https://modrinth.com/mod/heracles/versions
+    val heracles = "1.1.7"
+    library("heracles-fabric", "earth.terrarium.heracles", "heracles-fabric-$minecraft")
+        .version(heracles)
+    library("heracles-forge", "earth.terrarium.heracles", "heracles-forge-$minecraft")
+        .version(heracles)
+
+    // https://modrinth.com/mod/resourceful-lib/versions
+    val resourcefullib = "2.1.20"
+    library(
+            "resourceful-lib-fabric",
+            "com.teamresourceful.resourcefullib",
+            "resourcefullib-fabric-$minecraft"
+        )
+        .version(resourcefullib)
+    library(
+            "resourceful-lib-forge",
+            "com.teamresourceful.resourcefullib",
+            "resourcefullib-forge-$minecraft"
+        )
+        .version(resourcefullib)
+
+    // https://modrinth.com/mod/kinecraft-serialization/versions
+    library("kinecraft-serialization", "maven.modrinth", "kinecraft-serialization")
+        .version("1.3.0-fabric")
 }
 
 plugins {

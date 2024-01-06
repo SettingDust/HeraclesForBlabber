@@ -41,6 +41,20 @@ dependencies {
 
     val modClientImplementation by configurations
     modClientImplementation(catalog.modmenu)
+
+    modImplementation(catalog.blabber)
+    modRuntimeOnly(catalog.cardinal.components.base)
+    modRuntimeOnly(catalog.cardinal.components.entity)
+    modRuntimeOnly(catalog.fabric.permissions.api)
+
+    modImplementation(catalog.heracles.fabric) {
+        exclude(module = "RoughlyEnoughItems-fabric")
+        exclude(module = "fabric-loader")
+        exclude(module = "fabric-api")
+    }
+    modImplementation(catalog.resourceful.lib.fabric)
+
+    modImplementation(include(catalog.kinecraft.serialization.get()) {})
 }
 
 kotlin { jvmToolchain(17) }
