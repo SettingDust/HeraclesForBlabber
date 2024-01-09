@@ -27,14 +27,18 @@ data class CompleteTaskAction(val questId: String, val taskId: String) : Dialogu
         val task = quest.tasks[taskId]
         if (task !is ChatTask) {
             HeraclesForBlabber.LOGGER.error(
-                "Task $taskId of quest $questId is not an EntityChatTask."
+                "Task $taskId of quest $questId is not an ${ChatTask::class.simpleName}."
             )
             return
         }
         val questsProgress = QuestProgressHandler.getProgress(player.server, player.uuid)
-        val questProgress = questsProgress.getProgress(questId)
-        val taskProgress = questProgress.getTask(task)
         // Mark the chat task completed
-        taskProgress.addProgress(task.type(), task, Pair.of(true, null))
+        questsProgress.testAndProgressTask(
+            player,
+            questId,
+            taskId,
+            Pair.of(true, null),
+            ChatTask.Type
+        )
     }
 }

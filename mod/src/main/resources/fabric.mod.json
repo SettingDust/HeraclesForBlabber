@@ -33,6 +33,12 @@
         "adapter": "kotlin",
         "value": "${group}.client.ModMenuEntrypoint"
       }
+    ],
+    "cardinal-components": [
+      {
+        "adapter": "kotlin",
+        "value": "settingdust.heraclesforblabber.HeraclesForBlabber${'$'}Components"
+      }
     ]
   },
   "mixins": [
