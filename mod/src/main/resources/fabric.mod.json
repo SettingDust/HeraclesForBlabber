@@ -49,5 +49,10 @@
   },
   "recommends": {
     "modmenu": "${modmenu}"
+  },
+  "custom": {
+    "cardinal-components": [
+      "$id:heracles_task_interlocutor_tracker"
+    ]
   }
 }

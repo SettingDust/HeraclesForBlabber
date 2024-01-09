@@ -1,0 +1,12 @@
+{
+  "task.heracles-for-blabber.chat": "\uD83D\uDCAC 对话",
+  "task.heracles-for-blabber.chat.title.singular": "完成对话",
+  "task.heracles-for-blabber.chat.desc.singular": "进行 %s 对话",
+  "setting.heracles-for-blabber.chat.title": "标题覆写：",
+  "setting.heracles-for-blabber.chat.icon": "图标覆写：",
+  "setting.heracles-for-blabber.chat.dialogue": "对话：",
+  "setting.heracles-for-blabber.chat.need_action": "需要触发完成对话动作：",
+  "reward.heracles-for-blabber.chat": "\uD83D\uDCAC 对话",
+  "reward.heracles-for-blabber.chat.title.singular": "触发对话",
+  "reward.heracles-for-blabber.chat.desc.singular": "%s"
+}

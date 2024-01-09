@@ -1,0 +1,12 @@
+{
+  "task.heracles-for-blabber.chat": "\uD83D\uDCAC Chat",
+  "task.heracles-for-blabber.chat.title.singular": "Complete a Dialogue",
+  "task.heracles-for-blabber.chat.desc.singular": "Complete '%s'",
+  "setting.heracles-for-blabber.chat.title": "Title Override:",
+  "setting.heracles-for-blabber.chat.icon": "Icon Override:",
+  "setting.heracles-for-blabber.chat.dialogue": "Dialogue:",
+  "setting.heracles-for-blabber.chat.need_action": "Need trigger dialogue complete task action",
+  "reward.heracles-for-blabber.chat": "\uD83D\uDCAC Chat",
+  "reward.heracles-for-blabber.chat.title.singular": "Trigger a dialogue",
+  "reward.heracles-for-blabber.chat.desc.singular": "%s"
+}

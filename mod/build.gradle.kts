@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.pm20.util.archivesName
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     alias(catalog.plugins.fabric.loom)
@@ -43,9 +44,9 @@ dependencies {
     modClientImplementation(catalog.modmenu)
 
     modImplementation(catalog.blabber)
-    modRuntimeOnly(catalog.cardinal.components.base)
-    modRuntimeOnly(catalog.cardinal.components.entity)
-    modRuntimeOnly(catalog.fabric.permissions.api)
+    modImplementation(catalog.cardinal.components.base)
+    modImplementation(catalog.cardinal.components.entity)
+    modRuntimeOnly(catalog.fabric.permissions.api) { exclude(module = "fabric-loader") }
 
     modImplementation(catalog.heracles.fabric) {
         exclude(module = "RoughlyEnoughItems-fabric")
@@ -90,4 +91,6 @@ tasks {
     jar { from("LICENSE") }
 
     ideaSyncTask { enabled = true }
+
+    withType<KotlinCompile> { kotlinOptions { freeCompilerArgs += "-Xjvm-default=all" } }
 }

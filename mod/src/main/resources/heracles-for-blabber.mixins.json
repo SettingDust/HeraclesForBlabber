@@ -5,6 +5,10 @@
   "refmap": "${id}.refmap.json",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "EntityInteractTaskMixin",
+    "PlayerDialogueTrackerMixin",
+    "QuestMixin",
+    "QuestsProgressMixin"
   ],
   "client": [
   ],
