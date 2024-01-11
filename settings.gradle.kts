@@ -2,6 +2,7 @@ pluginManagement {
     repositories {
         mavenCentral()
         gradlePluginPortal()
+        maven("https://maven2.bai.lol")
         maven("https://maven.fabricmc.net/") { name = "Fabric" }
         maven("https://maven.quiltmc.org/repository/release") { name = "Quilt" }
         maven("https://maven.minecraftforge.net/") { name = "Forge" }
@@ -155,6 +156,15 @@ dependencyResolutionManagement.versionCatalogs.create("catalog") {
     // https://modrinth.com/mod/kinecraft-serialization/versions
     library("kinecraft-serialization", "maven.modrinth", "kinecraft-serialization")
         .version("1.3.0-fabric")
+
+    // https://modrinth.com/mod/heracles-for-villagers/versions
+    library("heracles-villagers", "maven.modrinth", "heracles-for-villagers").version("0.3.1")
+
+    // https://modrinth.com/mod/guard-villagers-(fabricquilt)/versions
+    library("guard-villagers", "maven.modrinth", "guard-villagers-(fabricquilt)")
+        .version("2.0.8-$minecraft")
+
+    plugin("explosion", "lol.bai.explosion").version("0.1.0")
 }
 
 plugins {

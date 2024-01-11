@@ -6,9 +6,11 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "EntityInteractTaskMixin",
+    "GuardVillagerInteractTaskMixin",
     "PlayerDialogueTrackerMixin",
     "QuestMixin",
-    "QuestsProgressMixin"
+    "QuestsProgressMixin",
+    "VillagerInteractTaskMixin"
   ],
   "client": [
   ],

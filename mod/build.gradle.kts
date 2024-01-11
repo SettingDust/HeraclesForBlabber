@@ -6,6 +6,8 @@ plugins {
 
     alias(catalog.plugins.kotlin.jvm)
     alias(catalog.plugins.kotlin.plugin.serialization)
+
+    alias(catalog.plugins.explosion)
 }
 
 val id: String by rootProject.properties
@@ -14,6 +16,8 @@ val author: String by rootProject.properties
 val description: String by rootProject.properties
 
 archivesName = name
+
+kotlin { jvmToolchain(17) }
 
 loom {
     splitEnvironmentSourceSets()
@@ -56,9 +60,11 @@ dependencies {
     modImplementation(catalog.resourceful.lib.fabric)
 
     modImplementation(include(catalog.kinecraft.serialization.get()) {})
-}
 
-kotlin { jvmToolchain(17) }
+    modImplementation(catalog.heracles.villagers)
+    modImplementation(catalog.guard.villagers)
+    modRuntimeOnly(explosion.fabric { maven(catalog.guard.villagers.get().toString()) })
+}
 
 java {
     // Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
