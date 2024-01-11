@@ -1,4 +1,9 @@
 
+## [0.2.0] - 2024-01-11
+### :sparkles: New Features
+- [`804adad`](https://github.com/SettingDust/HeraclesForBlabber/commit/804adad01a0618e62c4f0a4c0dea304bcfc4324e) - add support for HeraclesForVillagers tasks *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+
 ## [0.1.0] - 2024-01-09
 ### :sparkles: New Features
 - [`aacd643`](https://github.com/SettingDust/HeraclesForBlabber/commit/aacd6435ba50daff6b13d32ca21b5aea7e3f8f36) - add chat reward and task *(commit by [@SettingDust](https://github.com/SettingDust))*
@@ -15,3 +20,4 @@
 
 
 [0.1.0]: https://github.com/SettingDust/HeraclesForBlabber/compare/0.0.0...0.1.0
+[0.2.0]: https://github.com/SettingDust/HeraclesForBlabber/compare/0.1.0...0.2.0
