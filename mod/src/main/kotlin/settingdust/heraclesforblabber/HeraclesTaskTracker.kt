@@ -26,16 +26,14 @@ data class HeraclesTaskInterlocutorTracker(val player: PlayerEntity) :
 
     override fun readFromNbt(tag: NbtCompound) {
         data.clear()
+        val server = player.server
         for (key in tag.keys) {
-            data[QuestHandler.get(key)] =
-                player.server!!
-                    .getWorld(
-                        RegistryKey.of(
-                            RegistryKeys.WORLD,
-                            Identifier.tryParse(tag.getString("world"))
-                        )
-                    )!!
-                    .getEntity(tag.getUuid("entity"))!!
+            val taskTag = tag.getCompound(key)
+            val worldRegistryKey =
+                RegistryKey.of(RegistryKeys.WORLD, Identifier.tryParse(taskTag.getString("world")))
+            val serverWorld = server!!.getWorld(worldRegistryKey)
+            val entity = serverWorld!!.getEntity(taskTag.getUuid("entity"))
+            data[QuestHandler.get(key)] = entity!!
         }
     }
 
