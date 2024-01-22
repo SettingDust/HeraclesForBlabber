@@ -14,19 +14,26 @@ import net.minecraft.client.MinecraftClient
 import net.minecraft.client.gui.DrawContext
 import net.minecraft.nbt.NbtByte
 import net.minecraft.text.Text
+import org.ladysnake.blabber.impl.common.DialogueRegistry
 import settingdust.heraclesforblabber.ChatTask
 import settingdust.heraclesforblabber.HeraclesForBlabber
 
 object ChatSettings : SettingInitializer<ChatTask>, CustomizableQuestElementSettings<ChatTask> {
     override fun create(task: ChatTask?) =
         super.create(task).apply {
-            put("dialogue", TextSetting.RESOURCELOCATION, task?.dialogue ?: INVALID_ID)
+            put(
+                "dialogue",
+                TextSetting.RESOURCELOCATION,
+                task?.dialogue ?: DialogueRegistry.getIds().firstOrNull() ?: INVALID_ID
+            )
             put("need_action", BooleanSetting.TRUE, task?.needAction ?: true)
         }!!
 
     override fun create(id: String, task: ChatTask?, data: SettingInitializer.Data): ChatTask {
         val dialogue =
-            data.get("dialogue", TextSetting.RESOURCELOCATION).orElse(task?.dialogue ?: INVALID_ID)
+            data
+                .get("dialogue", TextSetting.RESOURCELOCATION)
+                .orElse(task?.dialogue ?: DialogueRegistry.getIds().firstOrNull() ?: INVALID_ID)
         val needAction =
             data.get("need_action", BooleanSetting.TRUE).orElse(task?.needAction ?: true)
         return create(task, data) { title, icon -> ChatTask(id, title, icon, dialogue, needAction) }
