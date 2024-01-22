@@ -1,4 +1,9 @@
 
+## [0.2.2] - 2024-01-22
+### :sparkles: New Features
+- [`80ba793`](https://github.com/SettingDust/HeraclesForBlabber/commit/80ba793f4cf393791df440633fd1d665f572c151) - use the first dialogue id instead of invalid id *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+
 ## [0.2.0] - 2024-01-11
 ### :sparkles: New Features
 - [`804adad`](https://github.com/SettingDust/HeraclesForBlabber/commit/804adad01a0618e62c4f0a4c0dea304bcfc4324e) - add support for HeraclesForVillagers tasks *(commit by [@SettingDust](https://github.com/SettingDust))*
@@ -21,3 +26,4 @@
 
 [0.1.0]: https://github.com/SettingDust/HeraclesForBlabber/compare/0.0.0...0.1.0
 [0.2.0]: https://github.com/SettingDust/HeraclesForBlabber/compare/0.1.0...0.2.0
+[0.2.2]: https://github.com/SettingDust/HeraclesForBlabber/compare/0.2.1...0.2.2
