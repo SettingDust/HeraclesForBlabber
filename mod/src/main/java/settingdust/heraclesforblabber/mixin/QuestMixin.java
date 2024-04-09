@@ -1,8 +1,7 @@
 package settingdust.heraclesforblabber.mixin;
 
+import com.llamalad7.mixinextras.sugar.Local;
 import earth.terrarium.heracles.api.quests.Quest;
-import earth.terrarium.heracles.api.rewards.QuestReward;
-import java.util.stream.Stream;
 import net.minecraft.server.network.ServerPlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -13,21 +12,13 @@ import settingdust.heraclesforblabber.HeraclesTaskInterlocutorTracker;
 @Mixin(Quest.class)
 public class QuestMixin {
     @Inject(method = "claimRewards", at = @At("HEAD"))
-    private void storingRewardingQuest(
-            final String questId,
-            final ServerPlayerEntity player,
-            final Stream<? extends QuestReward<?>> rewards,
-            final CallbackInfo ci) {
+    private void storingRewardingQuest(final CallbackInfo ci, @Local(argsOnly = true) ServerPlayerEntity player) {
         final var tracker = HeraclesTaskInterlocutorTracker.Companion.getHeraclesTaskInterlocutorTracker(player);
         tracker.setRewardingQuest((Quest) (Object) this);
     }
 
     @Inject(method = "claimRewards", at = @At("RETURN"))
-    private void clearRewardingQuest(
-            final String questId,
-            final ServerPlayerEntity player,
-            final Stream<? extends QuestReward<?>> rewards,
-            final CallbackInfo ci) {
+    private void clearRewardingQuest(final CallbackInfo ci, @Local(argsOnly = true) ServerPlayerEntity player) {
         final var tracker = HeraclesTaskInterlocutorTracker.Companion.getHeraclesTaskInterlocutorTracker(player);
         tracker.setRewardingQuest(null);
     }

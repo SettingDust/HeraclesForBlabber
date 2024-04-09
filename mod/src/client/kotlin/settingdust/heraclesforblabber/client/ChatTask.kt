@@ -12,7 +12,7 @@ import earth.terrarium.heracles.api.tasks.client.display.TaskTitleFormatter
 import earth.terrarium.heracles.common.handlers.progress.TaskProgress
 import net.minecraft.client.MinecraftClient
 import net.minecraft.client.gui.DrawContext
-import net.minecraft.nbt.NbtByte
+import net.minecraft.nbt.AbstractNbtNumber
 import net.minecraft.text.Text
 import org.ladysnake.blabber.impl.common.DialogueRegistry
 import settingdust.heraclesforblabber.ChatTask
@@ -40,7 +40,8 @@ object ChatSettings : SettingInitializer<ChatTask>, CustomizableQuestElementSett
     }
 }
 
-data class ChatTaskWidget(val task: ChatTask, val progress: TaskProgress<NbtByte>) : DisplayWidget {
+data class ChatTaskWidget(val task: ChatTask, val progress: TaskProgress<AbstractNbtNumber>) :
+    DisplayWidget {
     companion object {
         private const val DESC = "task.${HeraclesForBlabber.ID}.chat.desc.singular"
     }
