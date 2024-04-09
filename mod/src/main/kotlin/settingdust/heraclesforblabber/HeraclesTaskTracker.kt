@@ -20,7 +20,7 @@ data class HeraclesTaskInterlocutorTracker(val player: PlayerEntity) :
     var rewardingQuest: Quest? = null
 
     companion object {
-        val PlayerEntity.heraclesTaskInterlocutorTracker
+        val PlayerEntity.heraclesTaskInterlocutorTracker: HeraclesTaskInterlocutorTracker
             get() = HeraclesForBlabber.Components.HERACLES_TASK_INTERLOCUTOR_TRACKER[this]
     }
 
@@ -39,13 +39,15 @@ data class HeraclesTaskInterlocutorTracker(val player: PlayerEntity) :
 
     override fun writeToNbt(tag: NbtCompound) {
         for ((quest, entity) in data) {
-            tag.put(
-                (QuestHandler.quests() as BiMap<String, Quest>).inverse()[quest]!!,
-                NbtCompound().apply {
-                    putUuid("entity", entity.uuid)
-                    putString("world", entity.world.registryKey.value.toString())
-                }
-            )
+            (QuestHandler.quests() as BiMap<String, Quest>).inverse()[quest]?.let {
+                tag.put(
+                    it,
+                    NbtCompound().apply {
+                        putUuid("entity", entity.uuid)
+                        putString("world", entity.world.registryKey.value.toString())
+                    }
+                )
+            }
         }
     }
 }
