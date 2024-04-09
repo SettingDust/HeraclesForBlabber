@@ -46,11 +46,9 @@ dependencyResolutionManagement.versionCatalogs.named("catalog") {
     library("fabric-permissions-api", "me.lucko", "fabric-permissions-api").version("0.2-SNAPSHOT")
 
     // https://modrinth.com/mod/heracles/versions
-    val heracles = "1.1.7"
-    library("heracles-fabric", "earth.terrarium.heracles", "heracles-fabric-$minecraft")
-        .version(heracles)
-    library("heracles-forge", "earth.terrarium.heracles", "heracles-forge-$minecraft")
-        .version(heracles)
+    val heracles = "1.1.12"
+    library("heracles-fabric", "maven.modrinth", "heracles").version("$heracles-fabric")
+    library("heracles-forge", "maven.modrinth", "heracles").version("$heracles-forge")
 
     // https://modrinth.com/mod/resourceful-lib/versions
     val resourcefullib = "2.1.20"

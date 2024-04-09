@@ -10,7 +10,7 @@ import earth.terrarium.heracles.api.tasks.PairQuestTask
 import earth.terrarium.heracles.api.tasks.QuestTaskType
 import earth.terrarium.heracles.api.tasks.storage.defaults.BooleanTaskStorage
 import net.minecraft.item.Items
-import net.minecraft.nbt.NbtByte
+import net.minecraft.nbt.AbstractNbtNumber
 import net.minecraft.util.Identifier
 
 data class ChatTask(
@@ -19,7 +19,7 @@ data class ChatTask(
     val icon: QuestIcon<*>,
     val dialogue: Identifier,
     val needAction: Boolean = true
-) : PairQuestTask<Boolean, Identifier?, NbtByte, ChatTask>, CustomizableQuestElement {
+) : PairQuestTask<Boolean, Identifier?, AbstractNbtNumber, ChatTask>, CustomizableQuestElement {
     override fun id() = id
 
     override fun title() = title
@@ -30,14 +30,15 @@ data class ChatTask(
 
     override fun type() = Type
 
-    override fun getProgress(progress: NbtByte) = if (storage().readBoolean(progress)) 1F else 0F
+    override fun getProgress(progress: AbstractNbtNumber) =
+        if (storage().readBoolean(progress)) 1F else 0F
 
     override fun test(
         type: QuestTaskType<*>,
-        progress: NbtByte,
+        progress: AbstractNbtNumber,
         completed: Boolean,
         dialogue: Identifier?
-    ): NbtByte =
+    ): AbstractNbtNumber =
         BooleanTaskStorage.INSTANCE.of(
             progress,
             completed || (dialogue == this.dialogue && !needAction)
