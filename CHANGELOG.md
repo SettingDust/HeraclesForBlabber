@@ -1,4 +1,9 @@
 
+## [0.4.1] - 2024-04-09
+### :bug: Bug Fixes
+- [`3503f11`](https://github.com/SettingDust/HeraclesForBlabber/commit/3503f116c667308c8e12a9a7cb1ffaa9586172a4) - register packet *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+
 ## [0.3.2] - 2024-04-09
 ### :bug: Bug Fixes
 - [`326b4f6`](https://github.com/SettingDust/HeraclesForBlabber/commit/326b4f6d2491e0828bf8fb2a020c87527147c4a8) - ignore non-existing quest *(commit by [@SettingDust](https://github.com/SettingDust))*
@@ -39,3 +44,4 @@
 [0.2.2]: https://github.com/SettingDust/HeraclesForBlabber/compare/0.2.1...0.2.2
 [0.3.1]: https://github.com/SettingDust/HeraclesForBlabber/compare/0.3.0...0.3.1
 [0.3.2]: https://github.com/SettingDust/HeraclesForBlabber/compare/0.3.1...0.3.2
+[0.4.1]: https://github.com/SettingDust/HeraclesForBlabber/compare/0.4.0...0.4.1
