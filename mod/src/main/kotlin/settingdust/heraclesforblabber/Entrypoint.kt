@@ -9,6 +9,7 @@ import earth.terrarium.heracles.api.rewards.QuestRewards
 import earth.terrarium.heracles.api.tasks.QuestTask
 import earth.terrarium.heracles.api.tasks.QuestTasks
 import earth.terrarium.heracles.common.handlers.progress.QuestProgressHandler
+import earth.terrarium.heracles.common.network.NetworkHandler
 import net.minecraft.server.network.ServerPlayerEntity
 import net.minecraft.util.Identifier
 import org.apache.logging.log4j.LogManager
@@ -16,6 +17,8 @@ import org.ladysnake.blabber.Blabber
 import settingdust.heraclesforblabber.HeraclesTaskInterlocutorTracker.Companion.heraclesTaskInterlocutorTracker
 
 fun init() {
+    NetworkHandler.CHANNEL.register(ClaimChatRewardPacket.TYPE)
+
     Blabber.registerAction(HeraclesForBlabber.identifier("complete_task"), CompleteTaskAction.CODEC)
 
     QuestTasks.register(ChatTask.Type)
