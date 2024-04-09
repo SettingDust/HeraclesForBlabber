@@ -10,7 +10,6 @@ import earth.terrarium.heracles.client.handlers.ClientQuests
 import earth.terrarium.heracles.client.screens.quest.BaseQuestScreen
 import earth.terrarium.heracles.common.handlers.progress.QuestProgress
 import earth.terrarium.heracles.common.network.NetworkHandler
-import earth.terrarium.heracles.common.network.packets.rewards.ClaimRewardsPacket
 import net.minecraft.client.MinecraftClient
 import net.minecraft.client.gui.DrawContext
 import net.minecraft.item.ItemStack
@@ -18,6 +17,7 @@ import net.minecraft.item.Items
 import net.minecraft.text.Text
 import org.ladysnake.blabber.impl.common.DialogueRegistry
 import settingdust.heraclesforblabber.ChatReward
+import settingdust.heraclesforblabber.ClaimChatRewardPacket
 import settingdust.heraclesforblabber.HeraclesForBlabber
 
 @Suppress("UnstableApiUsage")
@@ -87,12 +87,12 @@ data class ChatRewardWidget(
     override fun getIcon() =
         ItemStack(Items.PAPER).apply { setCustomName(Text.translatable(TITLE_SINGULAR)) }
 
-    override fun canClaim() = progress?.canClaim(reward.id) ?: false
+    override fun canClaim() = true
 
     override fun claimReward() {
         progress?.claimReward(reward.id)
         NetworkHandler.CHANNEL.sendToServer(
-            ClaimRewardsPacket(
+            ClaimChatRewardPacket(
                 this.quest,
                 reward.id(),
             ),
