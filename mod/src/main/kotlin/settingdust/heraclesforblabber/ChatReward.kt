@@ -43,7 +43,6 @@ data class ChatReward(
                 dialogue,
                 player.heraclesTaskInterlocutorTracker.rewardingQuest?.let {
                     val entity = player.heraclesTaskInterlocutorTracker.data[it]
-                    player.heraclesTaskInterlocutorTracker.rewardingQuest = null
                     entity
                 },
             )
