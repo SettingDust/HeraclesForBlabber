@@ -1,4 +1,9 @@
 
+## [0.5.1] - 2024-04-10
+### :sparkles: New Features
+- [`07b1bbd`](https://github.com/SettingDust/HeraclesForBlabber/commit/07b1bbd72438961cf81e0fae959a00c3ffb95aac) - don't clear rewarding quest as well *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+
 ## [0.5.0] - 2024-04-10
 ### :sparkles: New Features
 - [`2736e09`](https://github.com/SettingDust/HeraclesForBlabber/commit/2736e0901981d040e1359c0775d0b39810bd8114) - don't remove data after rewarded for read the dialogue again *(commit by [@SettingDust](https://github.com/SettingDust))*
@@ -51,3 +56,4 @@
 [0.3.2]: https://github.com/SettingDust/HeraclesForBlabber/compare/0.3.1...0.3.2
 [0.4.1]: https://github.com/SettingDust/HeraclesForBlabber/compare/0.4.0...0.4.1
 [0.5.0]: https://github.com/SettingDust/HeraclesForBlabber/compare/0.4.1...0.5.0
+[0.5.1]: https://github.com/SettingDust/HeraclesForBlabber/compare/0.5.0...0.5.1
