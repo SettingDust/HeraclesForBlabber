@@ -1,4 +1,9 @@
 
+## [0.5.2] - 2024-04-10
+### :bug: Bug Fixes
+- [`047a536`](https://github.com/SettingDust/HeraclesForBlabber/commit/047a5362c31bfdf6182a46077155c8777cd8424f) - assign default value for chat reward *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+
 ## [0.5.1] - 2024-04-10
 ### :sparkles: New Features
 - [`07b1bbd`](https://github.com/SettingDust/HeraclesForBlabber/commit/07b1bbd72438961cf81e0fae959a00c3ffb95aac) - don't clear rewarding quest as well *(commit by [@SettingDust](https://github.com/SettingDust))*
@@ -57,3 +62,4 @@
 [0.4.1]: https://github.com/SettingDust/HeraclesForBlabber/compare/0.4.0...0.4.1
 [0.5.0]: https://github.com/SettingDust/HeraclesForBlabber/compare/0.4.1...0.5.0
 [0.5.1]: https://github.com/SettingDust/HeraclesForBlabber/compare/0.5.0...0.5.1
+[0.5.2]: https://github.com/SettingDust/HeraclesForBlabber/compare/0.5.1...0.5.2
