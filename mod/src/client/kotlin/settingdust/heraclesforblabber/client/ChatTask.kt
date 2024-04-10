@@ -6,7 +6,6 @@ import earth.terrarium.heracles.api.client.WidgetUtils
 import earth.terrarium.heracles.api.client.settings.CustomizableQuestElementSettings
 import earth.terrarium.heracles.api.client.settings.SettingInitializer
 import earth.terrarium.heracles.api.client.settings.base.BooleanSetting
-import earth.terrarium.heracles.api.client.settings.base.TextSetting
 import earth.terrarium.heracles.api.client.theme.QuestScreenTheme
 import earth.terrarium.heracles.api.tasks.client.display.TaskTitleFormatter
 import earth.terrarium.heracles.common.handlers.progress.TaskProgress
@@ -23,7 +22,7 @@ object ChatSettings : SettingInitializer<ChatTask>, CustomizableQuestElementSett
         super.create(task).apply {
             put(
                 "dialogue",
-                TextSetting.RESOURCELOCATION,
+                ChatRewardSettings.DIALOGUES,
                 task?.dialogue ?: DialogueRegistry.getIds().firstOrNull() ?: INVALID_ID
             )
             put("need_action", BooleanSetting.TRUE, task?.needAction ?: true)
@@ -32,7 +31,7 @@ object ChatSettings : SettingInitializer<ChatTask>, CustomizableQuestElementSett
     override fun create(id: String, task: ChatTask?, data: SettingInitializer.Data): ChatTask {
         val dialogue =
             data
-                .get("dialogue", TextSetting.RESOURCELOCATION)
+                .get("dialogue", ChatRewardSettings.DIALOGUES)
                 .orElse(task?.dialogue ?: DialogueRegistry.getIds().firstOrNull() ?: INVALID_ID)
         val needAction =
             data.get("need_action", BooleanSetting.TRUE).orElse(task?.needAction ?: true)

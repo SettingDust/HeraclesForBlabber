@@ -23,7 +23,7 @@ import settingdust.heraclesforblabber.HeraclesForBlabber
 @Suppress("UnstableApiUsage")
 object ChatRewardSettings :
     SettingInitializer<ChatReward>, CustomizableQuestElementSettings<ChatReward> {
-    private val DIALOGUES =
+    val DIALOGUES =
         AutocompleteTextSetting(
             { DialogueRegistry.getIds().toList() },
             { text, item ->
