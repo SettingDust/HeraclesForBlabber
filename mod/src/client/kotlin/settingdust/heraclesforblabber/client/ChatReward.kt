@@ -33,18 +33,22 @@ object ChatRewardSettings :
             { it?.toString() ?: "" },
         )
 
-    override fun create(`object`: ChatReward?): SettingInitializer.CreationData {
-        val settings = super.create(`object`)
+    override fun create(reward: ChatReward?): SettingInitializer.CreationData {
+        val settings = super.create(reward)
         settings.put(
             "dialogue",
             DIALOGUES,
-            DialogueRegistry.getIds().firstOrNull() ?: INVALID_ID,
+            reward?.dialogue ?: DialogueRegistry.getIds().firstOrNull() ?: INVALID_ID,
         )
         return settings
     }
 
-    override fun create(id: String, `object`: ChatReward?, data: SettingInitializer.Data) =
-        create(`object`, data) { title, icon ->
+    override fun create(
+        id: String,
+        reward: ChatReward?,
+        data: SettingInitializer.Data
+    ): ChatReward =
+        create(reward, data) { title, icon ->
             ChatReward(
                 id,
                 title,
@@ -52,7 +56,7 @@ object ChatRewardSettings :
                 data
                     .get("dialogue", DIALOGUES)
                     .orElse(
-                        DialogueRegistry.getIds().firstOrNull() ?: INVALID_ID,
+                        reward?.dialogue ?: DialogueRegistry.getIds().firstOrNull() ?: INVALID_ID,
                     ),
             )
         }
