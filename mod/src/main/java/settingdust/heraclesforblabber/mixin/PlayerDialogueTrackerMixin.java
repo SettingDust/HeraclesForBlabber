@@ -1,11 +1,10 @@
 package settingdust.heraclesforblabber.mixin;
 
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.util.Identifier;
+import org.jetbrains.annotations.Nullable;
 import org.ladysnake.blabber.impl.common.PlayerDialogueTracker;
-import org.ladysnake.blabber.impl.common.model.DialogueTemplate;
+import org.ladysnake.blabber.impl.common.machine.DialogueStateMachine;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -20,20 +19,11 @@ public class PlayerDialogueTrackerMixin {
     @Final
     private PlayerEntity player;
 
-    @Inject(
-            method = "startDialogue0",
-            at =
-                    @At(
-                            value = "INVOKE",
-                            remap = false,
-                            target = "Lorg/ladysnake/blabber/impl/common/PlayerDialogueTracker;openDialogueScreen()V",
-                            shift = At.Shift.AFTER))
-    private void dialogueStarted(
-            final Identifier id,
-            final DialogueTemplate template,
-            final String start,
-            final Entity interlocutor,
-            final CallbackInfo ci) {
-        EntrypointKt.dialogueStarted(id, (ServerPlayerEntity) player);
+    @Shadow
+    private @Nullable DialogueStateMachine currentDialogue;
+
+    @Inject(method = "endDialogue", at = @At("HEAD"))
+    private void dialogueStarted(final CallbackInfo ci) {
+        EntrypointKt.dialogueStarted(currentDialogue.getId(), (ServerPlayerEntity) player);
     }
 }
