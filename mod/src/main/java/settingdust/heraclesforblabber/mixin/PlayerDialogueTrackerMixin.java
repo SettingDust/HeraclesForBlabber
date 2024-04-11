@@ -23,7 +23,7 @@ public class PlayerDialogueTrackerMixin {
     private @Nullable DialogueStateMachine currentDialogue;
 
     @Inject(method = "endDialogue", at = @At("HEAD"))
-    private void dialogueStarted(final CallbackInfo ci) {
-        EntrypointKt.dialogueStarted(currentDialogue.getId(), (ServerPlayerEntity) player);
+    private void dialogueEnded(final CallbackInfo ci) {
+        EntrypointKt.dialogueEnded(currentDialogue.getId(), (ServerPlayerEntity) player);
     }
 }

@@ -25,7 +25,7 @@ fun init() {
     QuestRewards.register(ChatReward.Type)
 }
 
-fun dialogueStarted(dialogue: Identifier, playerEntity: ServerPlayerEntity) {
+fun dialogueEnded(dialogue: Identifier, playerEntity: ServerPlayerEntity) {
     QuestProgressHandler.getProgress(playerEntity.server, playerEntity.uuid)
         .testAndProgressTaskType(playerEntity, Pair.of(false, dialogue), ChatTask.Type)
 }
