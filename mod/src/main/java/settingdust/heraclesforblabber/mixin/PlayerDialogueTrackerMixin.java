@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import settingdust.heraclesforblabber.EntrypointKt;
 
-@Mixin(PlayerDialogueTracker.class)
+@Mixin(value = PlayerDialogueTracker.class, remap = false)
 public class PlayerDialogueTrackerMixin {
     @Shadow
     @Final
