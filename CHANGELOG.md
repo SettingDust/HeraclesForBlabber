@@ -1,4 +1,9 @@
 
+## [0.6.1] - 2024-04-11
+### :bug: Bug Fixes
+- [`1e48035`](https://github.com/SettingDust/HeraclesForBlabber/commit/1e4803527bdfbf9e76d32751a7c54cd7516ae4f6) - disable remap for PlayerDialogueTrackerMixin *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+
 ## [0.5.2] - 2024-04-10
 ### :bug: Bug Fixes
 - [`047a536`](https://github.com/SettingDust/HeraclesForBlabber/commit/047a5362c31bfdf6182a46077155c8777cd8424f) - assign default value for chat reward *(commit by [@SettingDust](https://github.com/SettingDust))*
@@ -63,3 +68,4 @@
 [0.5.0]: https://github.com/SettingDust/HeraclesForBlabber/compare/0.4.1...0.5.0
 [0.5.1]: https://github.com/SettingDust/HeraclesForBlabber/compare/0.5.0...0.5.1
 [0.5.2]: https://github.com/SettingDust/HeraclesForBlabber/compare/0.5.1...0.5.2
+[0.6.1]: https://github.com/SettingDust/HeraclesForBlabber/compare/0.6.0...0.6.1
