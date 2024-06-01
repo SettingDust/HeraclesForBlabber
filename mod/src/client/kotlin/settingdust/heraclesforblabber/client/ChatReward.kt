@@ -25,7 +25,7 @@ object ChatRewardSettings :
     SettingInitializer<ChatReward>, CustomizableQuestElementSettings<ChatReward> {
     val DIALOGUES =
         AutocompleteTextSetting(
-            { DialogueRegistry.getIds().toList() },
+            { DialogueRegistry.getClientIds().toList() },
             { text, item ->
                 item.toString().lowercase().contains(text.lowercase()) &&
                     !item.toString().equals(text, ignoreCase = true)
@@ -38,7 +38,7 @@ object ChatRewardSettings :
         settings.put(
             "dialogue",
             DIALOGUES,
-            reward?.dialogue ?: DialogueRegistry.getIds().firstOrNull() ?: INVALID_ID,
+            reward?.dialogue ?: DialogueRegistry.getClientIds().firstOrNull() ?: INVALID_ID,
         )
         return settings
     }
@@ -56,7 +56,9 @@ object ChatRewardSettings :
                 data
                     .get("dialogue", DIALOGUES)
                     .orElse(
-                        reward?.dialogue ?: DialogueRegistry.getIds().firstOrNull() ?: INVALID_ID,
+                        reward?.dialogue
+                            ?: DialogueRegistry.getClientIds().firstOrNull()
+                            ?: INVALID_ID,
                     ),
             )
         }

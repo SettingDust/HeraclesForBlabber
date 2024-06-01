@@ -52,7 +52,7 @@ dependencies {
     modImplementation(catalog.cardinal.components.entity)
     modRuntimeOnly(catalog.fabric.permissions.api) { exclude(module = "fabric-loader") }
 
-    modImplementation(catalog.heracles.fabric) {
+    modImplementation(explosion.fabric { maven(catalog.heracles.fabric.get().toString()) }) {
         exclude(module = "RoughlyEnoughItems-fabric")
         exclude(module = "fabric-loader")
         exclude(module = "fabric-api")

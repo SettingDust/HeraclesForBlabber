@@ -23,7 +23,7 @@ object ChatSettings : SettingInitializer<ChatTask>, CustomizableQuestElementSett
             put(
                 "dialogue",
                 ChatRewardSettings.DIALOGUES,
-                task?.dialogue ?: DialogueRegistry.getIds().firstOrNull() ?: INVALID_ID
+                task?.dialogue ?: DialogueRegistry.getClientIds().firstOrNull() ?: INVALID_ID
             )
             put("need_action", BooleanSetting.TRUE, task?.needAction ?: true)
         }!!
@@ -32,7 +32,9 @@ object ChatSettings : SettingInitializer<ChatTask>, CustomizableQuestElementSett
         val dialogue =
             data
                 .get("dialogue", ChatRewardSettings.DIALOGUES)
-                .orElse(task?.dialogue ?: DialogueRegistry.getIds().firstOrNull() ?: INVALID_ID)
+                .orElse(
+                    task?.dialogue ?: DialogueRegistry.getClientIds().firstOrNull() ?: INVALID_ID
+                )
         val needAction =
             data.get("need_action", BooleanSetting.TRUE).orElse(task?.needAction ?: true)
         return create(task, data) { title, icon -> ChatTask(id, title, icon, dialogue, needAction) }

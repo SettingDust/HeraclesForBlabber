@@ -27,7 +27,7 @@ pluginManagement {
 
 dependencyResolutionManagement.versionCatalogs.named("catalog") {
     // https://modrinth.com/mod/blabber/versions
-    library("blabber", "org.ladysnake", "blabber").version("1.4.0-mc$minecraft")
+    library("blabber", "org.ladysnake", "blabber").version("1.5.1-mc$minecraft")
     // https://maven.ladysnake.org/#/releases/dev/onyxstudios/cardinal-components-api
     val cardinalComponents = "5.2.2"
     library(
