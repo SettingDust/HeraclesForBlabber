@@ -1,4 +1,12 @@
 
+## [0.6.3] - 2024-06-02
+### :bug: Bug Fixes
+- [`8d1d1c1`](https://github.com/SettingDust/HeraclesForBlabber/commit/8d1d1c1f2aba49c1b6005feb3f86fd4699c61bb6) - use client ids to suggest *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+### :wrench: Chores
+- [`05616fa`](https://github.com/SettingDust/HeraclesForBlabber/commit/05616fa7eeedb5a39ef9f618a19e2b846668f768) - **deps**: bump org.danilopianini.gradle-pre-commit-git-hooks *(commit by [@dependabot[bot]](https://github.com/apps/dependabot))*
+
+
 ## [0.6.1] - 2024-04-11
 ### :bug: Bug Fixes
 - [`1e48035`](https://github.com/SettingDust/HeraclesForBlabber/commit/1e4803527bdfbf9e76d32751a7c54cd7516ae4f6) - disable remap for PlayerDialogueTrackerMixin *(commit by [@SettingDust](https://github.com/SettingDust))*
@@ -69,3 +77,4 @@
 [0.5.1]: https://github.com/SettingDust/HeraclesForBlabber/compare/0.5.0...0.5.1
 [0.5.2]: https://github.com/SettingDust/HeraclesForBlabber/compare/0.5.1...0.5.2
 [0.6.1]: https://github.com/SettingDust/HeraclesForBlabber/compare/0.6.0...0.6.1
+[0.6.3]: https://github.com/SettingDust/HeraclesForBlabber/compare/0.6.2...0.6.3
